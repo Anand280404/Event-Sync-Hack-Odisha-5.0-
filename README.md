@@ -1,111 +1,104 @@
-Event Sync - Event Management System
-Event Sync is a full-stack web application for managing events, registrations, and payments. Built with Node.js, Express, MySQL, and vanilla JavaScript.
+# 🎉 Event Sync - Event Management System  
 
-🌟 Features
-User Authentication: Register, login, and JWT-based authentication
+> A **full-stack web application** for managing events, registrations, and payments.  
+Built with **Node.js**, **Express.js**, **MySQL**, and **Vanilla JavaScript**.  
 
-Event Management: Create, view, and manage events
+![License](https://img.shields.io/badge/license-MIT-green)  
+![Node](https://img.shields.io/badge/Node.js-18.x-brightgreen)  
+![Express](https://img.shields.io/badge/Express-4.x-blue)  
+![MySQL](https://img.shields.io/badge/MySQL-8.x-orange)  
+![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-yellow)
 
-Registration System: Users can register for events
+---
 
-Payment Processing: Integrated payment system for event registrations
+## 🌟 Features  
+✅ **User Authentication** — Register, login, and secure authentication using JWT  
+✅ **Event Management** — Create, edit, view, and manage events  
+✅ **Registration System** — Users can register for events  
+✅ **Payment Integration** — Integrated payment gateway for registrations  
+✅ **User Dashboard** — Manage your events & registrations  
+✅ **Responsive Design** — Works perfectly on desktop & mobile  
 
-User Dashboard: Personal dashboard for managing events and registrations
+---
 
-Responsive Design: Works on desktop and mobile devices
+## 🛠️ Tech Stack  
 
-🛠️ Tech Stack:
-Frontend:
+### **Frontend**  
+- **HTML5** → Structure  
+- **CSS3** → Styling & responsive design  
+- **Vanilla JavaScript** → Client-side interactivity  
+- **Font Awesome** → Icons  
 
-HTML5 - Structure
+### **Backend**  
+- **Node.js** → Runtime environment  
+- **Express.js** → Web framework  
+- **MySQL + Sequelize ORM** → Database  
+- **JWT** → Secure authentication  
+- **bcrypt.js** → Password hashing  
+- **Multer** → File uploads  
+- **CORS** → Cross-origin requests  
 
-CSS3 - Styling with responsive design
+---
 
-Vanilla JavaScript - Client-side functionality
+## 📦 Installation & Setup  
 
-Font Awesome - Icons
+### **Prerequisites**  
+- [Node.js](https://nodejs.org/) (v14 or higher)  
+- [MySQL](https://dev.mysql.com/downloads/) (v8.0 or higher)  
+- npm or yarn  
 
-Backend:
-
-Node.js - Runtime environment
-
-Express.js - Web framework
-
-MySQL - Database with Sequelize ORM
-
-JWT - Authentication tokens
-
-bcryptjs - Password hashing
-
-Multer - File uploads
-
-CORS - Cross-origin requests
-
-📦 Installation
-Prerequisites
-Node.js (v14 or higher)
-
-MySQL (v8.0 or higher)
-
-npm or yarn
-
-1. Clone the Repository
-bash
+### **1. Clone the Repository**
+```bash
 git clone https://github.com/your-username/event-sync.git
 cd event-sync
+
 2. Install Dependencies
-bash
 npm install
+
 3. Database Setup
-bash
-# Create MySQL database
 mysql -u root -p -e "CREATE DATABASE event_sync;"
 
-# Or using MySQL shell:
-# CREATE DATABASE event_sync;
 4. Environment Configuration
-Create a .env file in the root directory:
 
-env
+Create a .env file in the backend root directory:
+
 NODE_ENV=development
 PORT=5000
 
-# MySQL Database Configuration
 DB_HOST=localhost
 DB_PORT=3306
 DB_NAME=event_sync
 DB_USER=root
 DB_PASSWORD=your_mysql_password
 
-# JWT Secret
-JWT_SECRET=your-super-secret-jwt-key-here-make-it-very-long-and-secure
-
-# Client URL
+JWT_SECRET=your-super-secret-jwt-key
 CLIENT_URL=http://localhost:3000
+
 5. Start the Application
-bash
-# Development mode with auto-reload
+# Development mode
 npm run dev
 
 # Production mode
 npm start
+
 🚀 Usage
-Access the Application: Open http://localhost:3000 in your browser
 
-Register: Create a new account
+Open http://localhost:3000
+ in your browser
 
-Login: Access your dashboard
+Register → Create a new account
 
-Create Events: Organizers can create new events
+Login → Access your personal dashboard
 
-Browse Events: Users can view available events
+Create Events → Organizers can add new events
 
-Register for Events: Sign up for events you're interested in
+Browse Events → Explore available events
 
-Make Payments: Complete payment for event registrations
+Register → Sign up for events you like
+
+Make Payments → Complete payments securely
 
 📁 Project Structure
-text
 event-sync/
 ├── backend/
 │   ├── config/
@@ -146,111 +139,94 @@ event-sync/
 ├── .gitignore
 ├── package.json
 └── README.md
+
 🔌 API Endpoints
-Authentication
-POST /api/auth/register - User registration
 
-POST /api/auth/login - User login
-
-GET /api/auth/me - Get current user (protected)
+| Method | Endpoint             | Description            |
+| ------ | -------------------- | ---------------------- |
+| POST   | `/api/auth/register` | Register new user      |
+| POST   | `/api/auth/login`    | Login user             |
+| GET    | `/api/auth/me`       | Get current user (JWT) |
 
 Events
-GET /api/events - Get all events
 
-GET /api/events/:id - Get specific event
-
-POST /api/events - Create new event (protected)
-
-PUT /api/events/:id - Update event (protected)
-
-DELETE /api/events/:id - Delete event (protected)
+| Method | Endpoint          | Description      |
+| ------ | ----------------- | ---------------- |
+| GET    | `/api/events`     | Get all events   |
+| GET    | `/api/events/:id` | Get single event |
+| POST   | `/api/events`     | Create event     |
+| PUT    | `/api/events/:id` | Update event     |
+| DELETE | `/api/events/:id` | Delete event     |
 
 Registrations
-GET /api/registrations - Get user registrations (protected)
 
-POST /api/registrations - Register for event (protected)
-
-POST /api/registrations/:id/pay - Process payment (protected)
-
-Users
-GET /api/users - Get all users (admin)
-
-GET /api/users/:id - Get specific user
-
-PUT /api/users/:id - Update user (protected)
+| Method | Endpoint                     | Description            |
+| ------ | ---------------------------- | ---------------------- |
+| GET    | `/api/registrations`         | Get user registrations |
+| POST   | `/api/registrations`         | Register for event     |
+| POST   | `/api/registrations/:id/pay` | Process payment        |
 
 🗃️ Database Schema
-Users Table
-id (Primary Key)
 
-name
-
-email (Unique)
-
-password (Hashed)
-
-createdAt
-
-updatedAt
+| Column    | Type      | Details         |
+| --------- | --------- | --------------- |
+| id        | INT (PK)  | Primary Key     |
+| name      | VARCHAR   | User's name     |
+| email     | VARCHAR   | Unique email    |
+| password  | VARCHAR   | Hashed password |
+| createdAt | TIMESTAMP | Auto-generated  |
+| updatedAt | TIMESTAMP | Auto-generated  |
 
 Events Table
-id (Primary Key)
 
-title
-
-description
-
-date
-
-location
-
-price
-
-userId (Foreign Key to Users)
-
-createdAt
-
-updatedAt
+| Column      | Type      | Details        |
+| ----------- | --------- | -------------- |
+| id          | INT (PK)  | Primary Key    |
+| title       | VARCHAR   | Event title    |
+| description | TEXT      | Event details  |
+| date        | DATE      | Event date     |
+| location    | VARCHAR   | Event location |
+| price       | DECIMAL   | Ticket price   |
+| userId      | INT (FK)  | Event creator  |
+| createdAt   | TIMESTAMP | Auto-generated |
+| updatedAt   | TIMESTAMP | Auto-generated |
 
 Registrations Table
-id (Primary Key)
 
-userId (Foreign Key to Users)
-
-eventId (Foreign Key to Events)
-
-paymentStatus
-
-paymentAmount
-
-paymentDate
-
-createdAt
-
-updatedAt
+| Column        | Type      | Details         |
+| ------------- | --------- | --------------- |
+| id            | INT (PK)  | Primary Key     |
+| userId        | INT (FK)  | Registered user |
+| eventId       | INT (FK)  | Event reference |
+| paymentStatus | ENUM      | Paid / Pending  |
+| paymentAmount | DECIMAL   | Amount paid     |
+| paymentDate   | TIMESTAMP | Payment time    |
+| createdAt     | TIMESTAMP | Auto-generated  |
+| updatedAt     | TIMESTAMP | Auto-generated  |
 
 🔒 Security Features
-Password hashing with bcryptjs
 
-JWT token authentication
+Password Hashing → bcryptjs
 
-SQL injection prevention with Sequelize
+JWT Authentication → Secures endpoints
 
-CORS configuration
+SQL Injection Protection → Using Sequelize ORM
 
-Input validation and sanitization
+CORS Configuration → Secured cross-origin requests
 
-File upload restrictions
+Input Validation & Sanitization
+
+File Upload Restrictions
 
 🧪 Testing
-bash
+
 # Test database connection
 npm test
 
-# Test specific endpoints using curl or Postman
+# Test API endpoints using Postman or cURL
+
 🚀 Deployment
-Production Environment Variables
-env
+
 NODE_ENV=production
 PORT=5000
 DB_HOST=your-production-db-host
@@ -259,49 +235,46 @@ DB_USER=your-production-db-user
 DB_PASSWORD=your-production-db-password
 JWT_SECRET=your-production-jwt-secret
 CLIENT_URL=your-production-frontend-url
+
 Deployment Steps
-Set up production MySQL database
 
-Update environment variables
+Set up a production MySQL database
 
-Build frontend assets (if needed)
+Configure .env variables
 
-Start with process manager (PM2)
+Build frontend assets
 
-Set up reverse proxy (Nginx)
+Start app with PM2
+
+Set up Nginx reverse proxy
 
 Configure SSL certificate
 
 🤝 Contributing
+
+Contributions are welcome! 🎉
+
 Fork the project
 
-Create your feature branch (git checkout -b feature/AmazingFeature)
+Create a feature branch → git checkout -b feature/AmazingFeature
 
-Commit your changes (git commit -m 'Add some AmazingFeature')
+Commit changes → git commit -m "Add AmazingFeature"
 
-Push to the branch (git push origin feature/AmazingFeature)
+Push branch → git push origin feature/AmazingFeature
 
 Open a Pull Request
 
 📝 License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+
+This project is licensed under the MIT License — see the LICENSE
+ file for details.
 
 🆘 Support
-If you have any questions or issues, please:
 
-Check the browser console for errors
+Check browser console for frontend errors
 
 Verify database connection
 
-Check API endpoints with Postman
+Test API endpoints with Postman
 
-Create an issue in the GitHub repository
-
-🙏 Acknowledgments
-Font Awesome for icons
-
-MySQL for database
-
-Express.js team for the web framework
-
-All contributors and testers
+Create an issue in the repository if stuck
