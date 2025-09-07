@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Sync - Smart Event Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
+        <div class="flex items-center">
+            <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold mr-3">ES</div>
+            <span class="text-xl font-bold text-blue-600">Event Sync</span>
+        </div>
+        
+        <div class="hidden md:flex space-x-8">
+            <a href="#" class="text-blue-600 font-medium">Home</a>
+            <a href="#features" class="hover:text-blue-600">Features</a>
+            <a href="#events" class="hover:text-blue-600">Events</a>
+            <a href="#about" class="hover:text-blue-600">About</a>
+        </div>
+        
+        <div class="flex items-center space-x-4">
+            <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100">
+                <i class="fas fa-moon"></i>
+            </button>
+            <a href="login.html" class="px-4 py-2 rounded hover:bg-gray-100">Login</a>
+            <a href="register.html" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Register</a>
+        </div>
+        
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="p-2 rounded-md hover:bg-gray-100">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 flex flex-col items-center justify-center space-y-8">
+        <button id="close-menu" class="absolute top-4 right-4 p-2">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+        <a href="#" class="text-blue-600 text-xl font-medium">Home</a>
+        <a href="#features" class="text-xl">Features</a>
+        <a href="#events" class="text-xl">Events</a>
+        <a href="#about" class="text-xl">About</a>
+        <div class="flex space-x-4 mt-8">
+            <a href="login.html" class="px-6 py-2 rounded border border-blue-600 text-blue-600">Login</a>
+            <a href="register.html" class="px-6 py-2 bg-blue-600 text-white rounded-lg">Register</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="py-16 px-4 md:px-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Smart Event Management Made Simple</h1>
+                <p class="text-xl mb-8">From hackathons to workshops, Event Sync helps you plan, coordinate, and track events effortlessly.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="register.html" class="px-6 py-3 bg-white text-blue-600 rounded-lg font-medium hover:bg-gray-100">Get Started</a>
+                    <a href="#features" class="px-6 py-3 border-2 border-white rounded-lg font-medium hover:bg-white/10">Learn More</a>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-white/20 rounded-2xl rotate-3"></div>
+                    <div class="relative bg-white rounded-2xl p-6 shadow-2xl text-gray-800">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-bold">HackOdisha 5.0</h3>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Active</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">Date</p>
+                                    <p>Sept 15-16, 2023</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">Participants</p>
+                                    <p>1,248 Registered</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-200 flex justify-between items-center">
+                            <a href="events.html" class="text-blue-600 font-medium text-sm">View Details</a>
+                            <button class="px-4 py-1 bg-blue-600 text-white rounded text-sm">Register</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 px-4 md:px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4">Powerful Features for Everyone</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Event Sync provides tailored experiences for organizers and participants to make event management seamless.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        For Organizers
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="feature-icon w-12 h-12 rounded-lg flex items-center justify-center text-blue-600 mr-4">
+                                <i class="fas fa-calendar-plus"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Create & Manage Events</h4>
+                                <p class="text-gray-600">Easily set up and manage events with our intuitive dashboard.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="feature-icon w-12 h-12 rounded-lg flex items-center justify-center text-blue-600 mr-4">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Real-time Notifications</h4>
+                                <p class="text-gray-600">Send instant updates to participants about event changes.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="feature-icon w-12 h-12 rounded-lg flex items-center justify-center text-blue-600 mr-4">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Participant Analytics</h4>
+                                <p class="text-gray-600">View detailed statistics and download participant data.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-3">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        For Participants
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="feature-icon w-12 h-12 rounded-lg flex items-center justify-center text-purple-600 mr-4">
+                                <i class="fas fa-user-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">One-click Registration</h4>
+                                <p class="text-gray-600">Register for events with a single click and get instant confirmation.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="feature-icon w-12 h-12 rounded-lg flex items-center justify-center text-purple-600 mr-4">
+                                <i class="fas fa-calendar-day"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Personalized Dashboard</h4>
+                                <p class="text-gray-600">Track your event schedule, updates, and attendance in one place.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="feature-icon w-12 h-12 rounded-lg flex items-center justify-center text-purple-600 mr-4">
+                                <i class="fas fa-bookmark"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Bookmark Sessions</h4>
+                                <p class="text-gray-600">Save your favorite sessions and receive reminders before they start.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-center mb-8">Extra Features</h3>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center text-green-600 mb-4">
+                        <i class="fas fa-qrcode text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">QR Check-in System</h4>
+                    <p class="text-gray-600">Streamline event check-in with QR codes for faster registration and attendance tracking.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="w-14 h-14 rounded-full bg-red-100 flex items-center justify-center text-red-600 mb-4">
+                        <i class="fas fa-calendar-check text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">Google Calendar Integration</h4>
+                    <p class="text-gray-600">Sync event schedules with your Google Calendar and never miss an event.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="w-14 h-14 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 mb-4">
+                        <i class="fas fa-adjust text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">Dark/Light Mode</h4>
+                    <p class="text-gray-600">Choose your preferred interface style with our dark and light mode options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-16 px-4 md:px-8 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4">Upcoming Events</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Discover and register for upcoming hackathons, workshops, and tech events.</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Event Card 1 -->
+                <div class="event-card bg-white rounded-xl overflow-hidden shadow-md">
+                    <div class="h-40 bg-gradient-to-r from-blue-400 to-blue-600 relative">
+                        <span class="absolute top-4 right-4 bg-white text-blue-600 text-sm font-bold px-3 py-1 rounded-full">Hackathon</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">HackOdisha 5.0</h3>
+                        <p class text-gray-600 mb-4>Join the largest hackathon in Eastern India with 36 hours of coding, innovation, and fun.</p>
+                        
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            <span>Sept 15-16, 2023</span>
+                        </div>
+                        
+                        <div class="flex items-center text-gray-500 mb-6">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Virtual & KIIT University, Bhubaneswar</span>
+                        </div>
+                        
+                        <a href="events.html" class="block w-full py-3 bg-blue-600 text-white text-center rounded-lg font-medium hover:bg-blue-700">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Event Card 2 -->
+                <div class="event-card bg-white rounded-xl overflow-hidden shadow-md">
+                    <div class="h-40 bg-gradient-to-r from-purple-400 to-purple-600 relative">
+                        <span class="absolute top-4 right-4 bg-white text-purple-600 text-sm font-bold px-3 py-1 rounded-full">Workshop</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Web3 Development Workshop</h3>
+                        <p class text-gray-600 mb-4>Learn to build decentralized applications on Ethereum blockchain with hands-on sessions.</p>
+                        
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            <span>Sept 22, 2023</span>
+                        </div>
+                        
+                        <div class="flex items-center text-gray-500 mb-6">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Virtual Event</span>
+                        </div>
+                        
+                        <a href="events.html" class="block w-full py-3 bg-purple-600 text-white text-center rounded-lg font-medium hover:bg-purple-700">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Event Card 3 -->
+                <div class="event-card bg-white rounded-xl overflow-hidden shadow-md">
+                    <div class="h-40 bg-gradient-to-r from-green-400 to-green-600 relative">
+                        <span class="absolute top-4 right-4 bg-white text-green-600 text-sm font-bold px-3 py-1 rounded-full">Conference</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">AI Innovation Summit</h3>
+                        <p class text-gray-600 mb-4>Explore the latest advancements in artificial intelligence and machine learning.</p>
+                        
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            <span>Oct 5-6, 2023</span>
+                        </div>
+                        
+                        <div class="flex items-center text-gray-500 mb-6">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Hyderabad International Convention Center</span>
+                        </div>
+                        
+                        <a href="events.html" class="block w-full py-3 bg-green-600 text-white text-center rounded-lg font-medium hover:bg-green-700">View Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="events.html" class="px-6 py-3 bg-white border border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-50">Browse All Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Preview -->
+    <section class="py-16 px-4 md:px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4">Your Personalized Dashboard</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Everything you need to manage or participate in events, all in one place.</p>
+            
+            <div class="bg-gray-50 rounded-2xl p-6 shadow-inner">
+                <div class="flex flex-wrap gap-4 mb-6">
+                    <div class="px-4 py-2 bg-blue-600 text-white rounded-full">Upcoming Events</div>
+                    <div class="px-4 py-2 rounded-full border border-gray-300">Registered Events</div>
+                    <div class="px-4 py-2 rounded-full border border-gray-300">Bookmarked</div>
+                    <div class="px-4 py-2 rounded-full border border-gray-300">Attendance</div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-lg">HackOdisha 5.0</h3>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">3 Days Left</span>
+                    </div>
+                    
+                    <div class="flex items-center text-gray-500 mb-4">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>Sept 15-16, 2023 | 9:00 AM - 9:00 PM</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold">SK</div>
+                            <div class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-xs font-bold -ml-2">RP</div>
+                            <div class="w-8 h-8 rounded-full bg-purple-600 text-white flex items-center justify-center text-xs font-bold -ml-2">+2</div>
+                            <span class="text-sm text-gray-500 ml-2">Team Members</span>
+                        </div>
+                        
+                        <button class="px-4 py-2 bg-gray-100 rounded-lg text-gray-700 text-sm font-medium">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="dashboard-stat bg-white p-4 rounded-xl shadow-md">
+                        <h4 class="font-bold text-gray-500 mb-2">Registered Events</h4>
+                        <p class="text-3xl font-bold">5</p>
+                    </div>
+                    
+                    <div class="dashboard-stat bg-white p-4 rounded-xl shadow-md">
+                        <h4 class="font-bold text-gray-500 mb-2">Upcoming</h4>
+                        <p class="text-3xl font-bold">2</p>
+                    </div>
+                    
+                    <div class="dashboard-stat bg-white p-4 rounded-xl shadow-md">
+                        <h4 class="font-bold text-gray-500 mb-2">Attendance</h4>
+                        <p class="text-3xl font-bold">83%</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="dashboard.html" class="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700">Go to Dashboard</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- QR Code Section -->
+    <section class="py-16 px-4 md:px-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-bold mb-6">QR Code Check-in System</h2>
+                <p class="text-lg mb-6">Streamline your event check-in process with our QR code technology. Participants can check in instantly, and organizers can track attendance in real-time.</p>
+                
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle mr-3 text-xl"></i>
+                        <span>Instant check-in with QR code scanning</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle mr-3 text-xl"></i>
+                        <span>Real-time attendance tracking</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle mr-3 text-xl"></i>
+                        <span>Export attendance data</span>
+                    </li>
+                </ul>
+                
+                <a href="#" class="px-6 py-3 bg-white text-blue-600 rounded-lg font-medium hover:bg-gray-100">Learn More</a>
+            </div>
+            
+            <div class="flex justify-center">
+                <div class="bg-white p-8 rounded-2xl shadow-2xl text-center">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Your Event QR Code</h3>
+                    <div class="qr-code mx-auto mb-4">
+                        <i class="fas fa-qrcode text-5xl text-gray-700"></i>
+                    </div>
+                    <p class="text-gray-600">Scan this code for quick event check-in</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4 md:px-8">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center mb-4">
+                    <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold mr-3">ES</div>
+                    <span class="text-xl font-bold">Event Sync</span>
+                </div>
+                <p class="text-gray-400">Smart event management platform for organizers and participants.</p>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                    <li><a href="#features" class="text-gray-400 hover:text-white">Features</a></li>
+                    <li><a href="#events" class="text-gray-400 hover:text-white">Events</a></li>
+                    <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-lg mb-4">Resources</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Documentation</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">API</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Help Center</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-lg mb-4">Contact Us</h4>
+                <ul class="space-y-2">
+                    <li class="flex items-center">
+                        <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                        <span>contact@eventsync.com</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-phone mr-2 text-gray-400"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-map-marker-alt mr-2 mt-1 text-gray-400"></i>
+                        <span>123 Tech Park, Bhubaneswar, Odisha, India</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2023 Event Sync. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

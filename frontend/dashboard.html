@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Event Sync</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Event Sync</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li id="loginBtn" class="hidden"><a href="login.html">Login</a></li>
+                <li id="registerBtn" class="hidden"><a href="register.html">Register</a></li>
+                <li id="dashboardBtn" class="hidden"><a href="dashboard.html">Dashboard</a></li>
+                <li id="createEventBtn" class="hidden"><a href="create-event.html">Create Event</a></li>
+                <li id="logoutBtn" class="hidden"><a href="#" id="logoutLink">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="dashboard-header">
+            <h1>Welcome to Your Dashboard</h1>
+            <a href="create-event.html" class="btn">Create New Event</a>
+        </div>
+
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <div class="stat-number" id="eventsCreated">0</div>
+                <div class="stat-label">Events Created</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="eventsRegistered">0</div>
+                <div class="stat-label">Events Registered</div>
+            </div>
+        </div>
+
+        <h2>Your Events</h2>
+        <div id="userEvents" class="events-grid">
+            <!-- User's events will be loaded dynamically -->
+        </div>
+
+        <h2>Your Registrations</h2>
+        <div id="userRegistrations" class="events-grid">
+            <!-- User's registrations will be loaded dynamically -->
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
